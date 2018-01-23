@@ -47,5 +47,5 @@ merged_data$activity <- activity_group
 initial_data <- melt(merged_data,(id.vars=c("subject","activity")))
 final_data <- dcast(initial_data, subject + activity ~ variable, mean)
 names(final_data)[-c(1:2)] <- paste("The mean of " , names(final_data)[-c(1:2)] )
-write.table(final_data, "clean_data.txt", sep = ",")
+write.table(final_data, "clean_data.txt", sep = ",", row.names = FALSE)
 
